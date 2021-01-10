@@ -5,9 +5,10 @@
   "private": true,
   "dependencies": {
     "@nuxt/typescript-runtime": "2.0.0",
-    "@nuxtjs/composition-api": "0.18.0",
-    "nuxt-property-decorator": "2.8.8",
-    "nuxt": "2.14.12"
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@nuxtjs/proxy": "^2.1.0",
+    "nuxt": "2.14.12",
+    "nuxt-property-decorator": "2.8.8"
   },
   "scripts": {
     "dev": "nuxt-ts",

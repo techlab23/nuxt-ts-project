@@ -1,9 +1,10 @@
 import type { NuxtConfig } from '@nuxt/types'
-
+const GRAPHQL_API_ENDPOINT = process.env.NODE_ENV === 'development'
+                            ? '/api/graphql'
+                            : 'https://dev-functions-10ms.apedev.com.au/api/graphql'
 const config: NuxtConfig = {
   build: {},
   buildModules: [
-    '@nuxtjs/composition-api',
     '@nuxt/typescript-build'
   ],
   css: [],
@@ -18,10 +19,24 @@ const config: NuxtConfig = {
     link: []
   },
   loading: { color: '#0c64c1' },
-  modules: [],
+  modules: [
+    '@nuxtjs/proxy',
+    '@nuxtjs/apollo'
+  ],
   plugins: [
     '~/plugins/truncate'
-  ]
+  ],
+  proxy: {
+    '/api': 'http://localhost:7071/'
+  },
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: GRAPHQL_API_ENDPOINT,
+      }
+    }
+  }
+
 }
 
 export default config

@@ -1,0 +1,3 @@
+[submodule "types"]
+	path = types
+	url = git@bitbucket.org:apeagersit/10ms-types.git

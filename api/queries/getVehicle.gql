@@ -1,0 +1,24 @@
+query getVehicle($id: String) {
+  getVehicle(id: $id) {
+    vin
+    advertisedPrice
+    manufactureYear
+    make
+    model
+    series
+    badge
+    baseTransmissionType
+    fuelType
+    cylinders
+    engineSize
+    odometer
+    gearCount
+    transmissionType
+    featureList {
+      description
+    }
+    photos {
+      photoUrl
+    }
+  }
+}
